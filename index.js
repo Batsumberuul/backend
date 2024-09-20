@@ -1,14 +1,16 @@
 // import { createServer, request } from "http";
 const express = require("express");
 
-const UserRouter = require("./router/users");
+const userRouter = require("./router/users");
+const commentRouter = require("./router/comment");
 
 const app = express();
 app.use(express.json());
 
 const port = 8080;
 
-app.use(UserRouter);
+app.use("/user", userRouter);
+app.use("/comment", commentRouter);
 
 // const server = createServer((request, response) => {
 //   response.statusCode = 200;

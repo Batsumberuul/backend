@@ -1,5 +1,3 @@
-// const { response } = require("express");
-
 const users = [
   {
     id: 1,

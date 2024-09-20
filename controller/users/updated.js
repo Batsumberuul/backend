@@ -10,8 +10,13 @@ const users = [
     lastName: "Bond",
   },
 ];
-exports.getUsers = (request, response) => {
-  response.status(200).json({
-    users: users,
-  });
+exports.updatedUser = (request, response) => {
+  const { id } = request.params;
+  const { body } = request;
+
+  if (id) {
+    response.status(200).send("successfully updated user");
+  } else {
+    response.status(400).send(`user ${id} updated failed `);
+  }
 };
