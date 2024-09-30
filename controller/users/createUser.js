@@ -1,21 +1,13 @@
-const users = [
-  {
-    id: 1,
-    firstName: "John",
-    lastName: "Doe",
-  },
-  {
-    id: 2,
-    firstName: "James",
-    lastName: "Bond",
-  },
-];
+import { sql } from "../../database";
 
-exports.createUser = (request, response) => {
-  const { id, firstName, lastName } = request;
-  users.push({ ...request.body });
+export const createUser = async (request, response) => {
+  const { email, name, createdAt, updatedAt } = request.body;
+
+  const user = await sql`insert into Users (email, name, createdAt, updatedAt)
+ values ('bold@gmail.com',  'bold', '2024/09/30', '2024/09/30')`;
+
   response.status(200).json({
     message: `Successfully created user`,
-    users,
+    user,
   });
 };

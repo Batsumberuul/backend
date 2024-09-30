@@ -2,8 +2,24 @@
   "type": "commonjs",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "http-server": "^14.1.1",
-    "nodemon": "^3.1.5"
+    "nodemon": "^3.1.5",
+    "postgres": "^3.4.4"
+  },
+  "name": "expense-web",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r @babel/register index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.25.0",
+    "@babel/preset-env": "^7.25.4"
   }
 }

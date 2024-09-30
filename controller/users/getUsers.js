@@ -1,17 +1,9 @@
-const users = [
-  {
-    id: 1,
-    firstName: "John",
-    lastName: "Doe",
-  },
-  {
-    id: 2,
-    firstName: "James",
-    lastName: "Bond",
-  },
-];
-exports.getUsers = (request, response) => {
+import { sql } from "../../database";
+
+export const getUsers = async (request, response) => {
+  const users = await sql`select * from Users`;
+
   response.status(200).json({
-    users: users,
+    users,
   });
 };
